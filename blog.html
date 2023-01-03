@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+
+    <head>
+        <meta charset="utf-8">
+        <title>chatterbox</title>
+        <link rel="stylesheet" type="text/css" href="client/styles/styles.css">
+        <link rel="stylesheet" href="//code.jquery.com/ui/1.13.1/themes/base/jquery-ui.css">
+        <script src="node_modules/jquery/dist/jquery.js"></script>
+        <script src="node_modules/underscore/underscore.js"></script>
+        <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
+        <script>
+            // DO NOT MODIFY THIS CODE
+            if (!/(&|\?)username=/.test(window.location.search)) {
+                var search = window.location.search;
+                if (!/\?/.test(search)) {
+                    search += '?';
+                }
+                if (search[search.length - 1] !== '?') {
+                    search += '&';
+                }
+                search += 'username=' + (prompt('What is your name?') || 'anonymous');
+                window.location.search = search;
+            }
+        </script>
+    </head>
+
+<body>
+    <div class="nav">
+        <span class="logo" id="logo">BLOG</span>
+        <div>
+            <input type="text" name="title" id="search" class="search" placeholder="search">
+            <button id='searchButton' class="searchButton" >search</button>
+        </div>
+        <span id="button" class="nav-unselected">show form</span>
+    </div>
+
+    <div id="dialog">
+        <div class="main">
+            <h1>write your blog</h1>
+            <form action="#" id="send" method="post">
+                <input type="text" name="title" id="blog-title" placeholder="blog title">
+                <textarea name="body" id="blog-body" placeholder="blog body"></textarea>
+                <button type="submit" name="submit" class="submit">share</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="blogs" class="blog"></div>
+
+
+
+    <script type="module" src="./client/src/app.js"></script>
+
+</body>
+
+</html>
